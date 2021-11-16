@@ -384,3 +384,92 @@ nicla_sense.bootloader.config=-f target/nrf52.cfg
 nicla_sense.bootloader.programmer=-f interface/cmsis-dap.cfg
 nicla_sense.bootloader.file=NICLA/bootloader.hex
 
+
+##############################################################
+
+wio_pico.name=WIO_RP2040_MINI_DEV_BOARD
+wio_pico.build.core=arduino
+wio_pico.build.crossprefix=arm-none-eabi-
+wio_pico.build.compiler_path={runtime.tools.arm-none-eabi-gcc-7-2017q4.path}/bin/
+
+wio_pico.build.variant=WIO_RP2040_MINI_DEV_BOARD
+wio_pico.build.mcu=cortex-m0plus
+wio_pico.build.extra_flags=
+wio_pico.build.fpu=
+wio_pico.build.float-abi=
+wio_pico.build.architecture=cortex-m0plus
+wio_pico.build.board=WIO_RP2040_MINI_DEV_BOARD
+wio_pico.build.ldscript=linker_script.ld
+wio_pico.compiler.mbed.arch.define=-DARDUINO_ARCH_RP2040
+wio_pico.compiler.mbed.defines={build.variant.path}/defines.txt
+wio_pico.compiler.mbed.ldflags={build.variant.path}/ldflags.txt
+wio_pico.compiler.mbed.cflags={build.variant.path}/cflags.txt
+wio_pico.compiler.mbed.cxxflags={build.variant.path}/cxxflags.txt
+wio_pico.compiler.mbed.includes={build.variant.path}/includes.txt
+wio_pico.compiler.mbed.extra_ldflags=-lstdc++ -lsupc++ -lm -lc -lgcc -lnosys
+wio_pico.compiler.mbed="{build.variant.path}/libs/libmbed.a"
+wio_pico.vid.0=0x2886
+wio_pico.pid.0=0x8043
+wio_pico.upload_port.0.vid=0x2886
+wio_pico.upload_port.0.pid=0x8043
+wio_pico.upload.tool=picotool
+wio_pico.upload.tool.default=picotool
+wio_pico.upload.protocol=
+wio_pico.upload.transport=
+wio_pico.upload.use_1200bps_touch=true
+wio_pico.upload.wait_for_upload_port=false
+wio_pico.upload.native_usb=true
+wio_pico.upload.maximum_size=16777216
+wio_pico.upload.maximum_data_size=270336
+wio_pico.bootloader.tool=openocd
+wio_pico.bootloader.tool.default=openocd
+wio_pico.bootloader.config=-f target/rp2040.cfg
+wio_pico.bootloader.programmer=-f interface/cmsis-dap.cfg
+
+##############################################################
+
+
+##############################################################
+
+xiao_pico.name=SEEED_XIAO_RP2040
+xiao_pico.build.core=arduino
+xiao_pico.build.crossprefix=arm-none-eabi-
+xiao_pico.build.compiler_path={runtime.tools.arm-none-eabi-gcc-7-2017q4.path}/bin/
+
+xiao_pico.build.variant=SEEED_XIAO_RP2040
+xiao_pico.build.mcu=cortex-m0plus
+xiao_pico.build.extra_flags=
+xiao_pico.build.fpu=
+xiao_pico.build.float-abi=
+xiao_pico.build.architecture=cortex-m0plus
+xiao_pico.build.board=SEEED_XIAO_RP2040
+xiao_pico.build.ldscript=linker_script.ld
+xiao_pico.compiler.mbed.arch.define=-DARDUINO_ARCH_RP2040
+xiao_pico.compiler.mbed.defines={build.variant.path}/defines.txt
+xiao_pico.compiler.mbed.ldflags={build.variant.path}/ldflags.txt
+xiao_pico.compiler.mbed.cflags={build.variant.path}/cflags.txt
+xiao_pico.compiler.mbed.cxxflags={build.variant.path}/cxxflags.txt
+xiao_pico.compiler.mbed.includes={build.variant.path}/includes.txt
+xiao_pico.compiler.mbed.extra_ldflags=-lstdc++ -lsupc++ -lm -lc -lgcc -lnosys
+xiao_pico.compiler.mbed="{build.variant.path}/libs/libmbed.a"
+xiao_pico.vid.0=0x2886
+xiao_pico.pid.0=0x8042
+xiao_pico.upload_port.0.vid=0x2886
+xiao_pico.upload_port.0.pid=0x8042
+
+xiao_pico.upload.tool=picotool
+xiao_pico.upload.tool.default=picotool
+xiao_pico.upload.protocol=
+xiao_pico.upload.transport=
+xiao_pico.upload.use_1200bps_touch=true
+xiao_pico.upload.wait_for_upload_port=false
+xiao_pico.upload.native_usb=true
+xiao_pico.upload.maximum_size=16777216
+xiao_pico.upload.maximum_data_size=270336
+
+xiao_pico.bootloader.tool=openocd
+xiao_pico.bootloader.tool.default=openocd
+xiao_pico.bootloader.config=-f target/rp2040.cfg
+xiao_pico.bootloader.programmer=-f interface/cmsis-dap.cfg
+
+##############################################################
