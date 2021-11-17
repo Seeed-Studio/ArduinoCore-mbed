@@ -96,6 +96,9 @@ recipe.objcopy.bin.pattern="{compiler.path}{compiler.elf2hex.cmd}" {compiler.elf
 ## Create output (hex file)
 recipe.objcopy.hex.pattern="{compiler.path}{compiler.elf2hex.cmd}" {compiler.elf2hex.hex.flags} {compiler.elf2hex.extra_flags} "{build.path}/{build.project_name}.elf" "{build.path}/{build.project_name}.hex"
 
+## Create dfu package zip file
+recipe.objcopy.zip.pattern="{tools.nrfutil.cmd}" dfu genpkg --dev-type 0x0052 --sd-req {build.sd_fwid} --application "{build.path}/{build.project_name}.hex" "{build.path}/{build.project_name}.zip"
+
 ## Compute size
 recipe.size.pattern="{compiler.path}{compiler.size.cmd}" -A "{build.path}/{build.project_name}.elf"
 recipe.size.regex.data=^(?:\.data|\.bss)\s+([0-9]+).*
@@ -195,3 +198,36 @@ tools.gdb.path={runtime.tools.arm-none-eabi-gcc-7-2017q4.path}/bin/
 tools.gdb.cmd=arm-none-eabi-gdb
 tools.gdb.cmd.windows=arm-none-eabi-gdb.exe
 tools.gdb.debug.pattern="{path}/{cmd}" --interpreter=mi2 -ex "set pagination off" --baud 115200 -ex "set target-charset ASCII" -ex "target remote {debug.port}" {build.path}/{build.project_name}.elf
+
+#
+# NRFUTIL
+#
+#***************************************************
+# adafruit-nrfutil for uploading
+# https://github.com/ElectronicCats/Adafruit_nRF52_nrfutil/releases/
+# pre-built binaries are provided for macos and windows and linux
+#***************************************************
+
+tools.nrfutil.cmd=adafruit-nrfutil
+tools.nrfutil.cmd.windows={runtime.platform.path}/tools/adafruit-nrfutil/win32/adafruit-nrfutil.exe
+tools.nrfutil.cmd.macosx={runtime.platform.path}/tools/adafruit-nrfutil/macos/adafruit-nrfutil
+
+tools.nrfutil.upload.params.verbose=--verbose
+tools.nrfutil.upload.params.quiet=
+tools.nrfutil.upload.pattern="{cmd}" {upload.verbose} dfu serial -pkg "{build.path}/{build.project_name}.zip" -p {serial.port} -b 115200 --singlebank
+
+#***************************************************
+# Burning bootloader with either jlink or nrfutil
+#***************************************************
+
+# Bootloader version
+tools.bootburn.bootloader.file={runtime.platform.path}/bootloader/{build.variant}/{build.variant}_bootloader-0.6.1_{build.sd_name}_{build.sd_version}
+
+tools.bootburn.bootloader.params.verbose=
+tools.bootburn.bootloader.params.quiet=
+tools.bootburn.bootloader.pattern={program.burn_pattern}
+
+# erase flash page while programming
+tools.bootburn.erase.params.verbose=
+tools.bootburn.erase.params.quiet=
+tools.bootburn.erase.pattern=
