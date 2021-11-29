@@ -92,7 +92,7 @@ PinDescription g_APinDescription[] = {
   // LEDs
   { P0_26, NULL, NULL, NULL },     // D11/LED RED
   { P0_30, NULL, NULL, NULL },     // D12/LED GREEN
-  { P0_0,  NULL, NULL, NULL },     // D13/LED BLUE
+  { P0_6,  NULL, NULL, NULL },     // D13/LED BLUE
 
   // LSM6DS3TR
   { P1_8,  NULL, NULL, NULL },     // D14/6D_PWR
