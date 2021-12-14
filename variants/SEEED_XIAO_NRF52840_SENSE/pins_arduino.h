@@ -93,6 +93,9 @@ static const uint8_t A5  = PIN_A5;
 #define D9  (9u)
 #define D10 (10u)
 
+#define D29 (29u)
+#define D30 (30u)
+
 /*
  * Serial interfaces
  */
@@ -100,6 +103,10 @@ static const uint8_t A5  = PIN_A5;
 #define PIN_SERIAL_RX (7ul)
 #define PIN_SERIAL_TX (6ul)
 
+//Needed for SD library
+#define SDCARD_SPI    SPI
+#define SDCARD_SS_PIN   PIN_SPI_SS
+ 
 // SPI
 #define PIN_SPI_MISO  (9u)
 #define PIN_SPI_MOSI  (10u)
