@@ -25,7 +25,9 @@ jobs:
     env:
       # sketch paths to compile (recursive) compatible with all boards
       UNIVERSAL_SKETCH_PATHS: |
+        - libraries/PDM
         - libraries/Scheduler
+        - libraries/USBHID
       SKETCHES_REPORTS_PATH: sketches-reports
 
     strategy:
@@ -33,63 +35,35 @@ jobs:
 
       matrix:
         board:
-          - fqbn: arduino:mbed:nano33ble
-          - fqbn: arduino:mbed:envie_m4
-          - fqbn: arduino:mbed:envie_m7
-          - fqbn: arduino:mbed:nanorp2040connect
-          - fqbn: arduino:mbed:nicla_sense
+          - fqbn: Seeeduino:nrf52:xiaonRF52840Sense
+            type: nrf52
+          - fqbn: Seeeduino:rp2040:wio_pico
+            type: rp2040
+          - fqbn: Seeeduino:rp2040:xiao_pico
+            type: rp2040
 
-        # compile only the examples compatible with each board
+        # Make board type-specific configurations
         include:
           - board:
-              fqbn: arduino:mbed:nano33ble
+              type: nrf52
+            platforms: |
+              # Use Boards Manager to install the latest release of the platform to get the toolchain
+              - source-url: "https://files.seeedstudio.com/arduino/package_seeeduino_boards_index.json"
+                name: "Seeeduino:nrf52"
+              # Overwrite the Board Manager installation with the local platform
+              - source-path: "./"
+                name: "Seeeduino:nrf52"
             additional-sketch-paths: |
-              - libraries/PDM
               - libraries/ThreadDebug
-              - libraries/USBHID
               - libraries/USBMSD/examples/Nano33BLE_FlashMassStorage
           - board:
-              fqbn: arduino:mbed:envie_m4
-            additional-libraries: |
-              - name: lvgl
-            additional-sketch-paths: |
-              - libraries/doom
-              - libraries/KernelDebug
-              - libraries/Portenta_SDCARD
-              - libraries/Portenta_SDRAM
-              - libraries/Portenta_Video
-              - libraries/RPC
-          - board:
-              fqbn: arduino:mbed:envie_m7
-            additional-libraries: |
-              - name: lvgl
-                version: 7.11.0
-            additional-sketch-paths: |
-              - libraries/PDM
-              - libraries/doom
-              - libraries/KernelDebug
-              - libraries/Portenta_Camera/examples
-              - libraries/Portenta_lvgl/examples/Portenta_lvgl
-              - libraries/Portenta_SDCARD
-              - libraries/Portenta_SDRAM
-              - libraries/Portenta_System
-              - libraries/Portenta_Video
-              - libraries/RPC
-              - libraries/ThreadDebug
-              - libraries/USBHID
-              - libraries/USBHOST
-              - libraries/USBMSD/examples/AccessFlashAsUSBDisk
-              - libraries/WiFi
-          - board:
-              fqbn: arduino:mbed:nanorp2040connect
-            additional-sketch-paths: |
-              - libraries/PDM
-              - libraries/USBHID
-              - ~/Arduino/libraries/WiFiNINA
-          - board:
-              fqbn: arduino:mbed:nicla_sense
-            additional-sketch-paths: |
-              - libraries/Nicla_System
+              type: rp2040
+            platforms: |
+              - source-url: "https://files.seeedstudio.com/arduino/package_seeeduino_boards_index.json"
+                name: "Seeeduino:rp2040"
+              - source-path: "./"
+                name: "Seeeduino:rp2040"
+            additional-sketch-paths:
 
     steps:
       - name: Checkout repository
@@ -110,15 +84,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           fqbn: ${{ matrix.board.fqbn }}
-          libraries: |
-            - name: WiFiNINA
-            ${{ matrix.additional-libraries }}
-          platforms: |
-            # Use Board Manager to install the latest release of Arduino mbed Boards to get the toolchain
-            - name: "arduino:mbed"
-            # Overwrite the Board Manager installation with the local platform
-            - source-path: "./"
-              name: "arduino:mbed"
+          platforms: ${{ matrix.platforms }}
           sketch-paths: |
             ${{ env.UNIVERSAL_SKETCH_PATHS }}
             ${{ matrix.additional-sketch-paths }}
