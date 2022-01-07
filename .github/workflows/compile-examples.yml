@@ -41,7 +41,7 @@ jobs:
         # Make board type-specific configurations
         include:
           - board:
-            type: nrf52
+              type: nrf52
             platforms: |
               # Use Boards Manager to install the latest release of the platform to get the toolchain
               - source-url: "https://files.seeedstudio.com/arduino/package_seeeduino_boards_index.json"
