@@ -1,6 +1,7 @@
 name: Compile Examples
 
-on: 
+on:
+  workflow_dispatch:
   pull_request:
     paths:
       - ".github/workflows/compile-examples.yml"
