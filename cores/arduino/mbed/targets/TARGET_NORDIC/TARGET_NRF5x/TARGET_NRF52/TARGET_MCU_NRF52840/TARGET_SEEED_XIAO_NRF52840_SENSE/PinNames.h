@@ -139,7 +139,7 @@ typedef enum {
     p47 = P1_15,
  
     RX_PIN_NUMBER  = P1_12,
-    TX_PIN_NUMBER  = P1_1,
+    TX_PIN_NUMBER  = P1_11,
     
     LED_BUILTIN = P0_26,
     
