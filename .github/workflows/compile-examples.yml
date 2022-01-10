@@ -26,9 +26,9 @@ jobs:
     env:
       # sketch paths to compile (recursive) compatible with all boards
       UNIVERSAL_SKETCH_PATHS: |
-        - libraries/PDM
-        - libraries/Scheduler
-        - libraries/USBHID
+#        - libraries/PDM
+#        - libraries/Scheduler
+#        - libraries/USBHID
       SKETCHES_REPORTS_PATH: sketches-reports
 
     strategy:
@@ -51,8 +51,8 @@ jobs:
               - source-path: "./"
                 name: "Seeeduino:nrf52"
             additional-sketch-paths: |
-              - libraries/ThreadDebug
-              - libraries/USBMSD/examples/Nano33BLE_FlashMassStorage
+#              - libraries/ThreadDebug
+#              - libraries/USBMSD/examples/Nano33BLE_FlashMassStorage
 
     steps:
       - name: Checkout repository
