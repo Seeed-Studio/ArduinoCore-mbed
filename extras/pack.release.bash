@@ -18,7 +18,7 @@
 #  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 # Version check removed because version string passed from jenkins was incorrect
-VERSION_FROM_TAG=$1
+VERSION_FROM_TAG=2.6.1
 CORE_NAME=$2
 echo $VERSION_FROM_TAG
 echo $CORE_NAME
