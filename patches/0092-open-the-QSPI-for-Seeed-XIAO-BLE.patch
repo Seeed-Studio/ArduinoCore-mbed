@@ -1,0 +1,70 @@
+From 61180bcbb9bf8f9b139cff3a1fe625890e49fe2f Mon Sep 17 00:00:00 2001
+From: bbear <953308023@qq.com>
+Date: Wed, 26 Jan 2022 08:50:29 +0000
+Subject: [PATCH] open the QSPI for Seeed XIAO BLE
+
+---
+ storage/blockdevice/COMPONENT_QSPIF/mbed_lib.json |  3 ++-
+ .../TARGET_SEEED_XIAO_NRF52840_SENSE/PinNames.h   | 15 +++++++++++++++
+ targets/targets.json                              |  4 ----
+ 3 files changed, 17 insertions(+), 5 deletions(-)
+
+diff --git a/storage/blockdevice/COMPONENT_QSPIF/mbed_lib.json b/storage/blockdevice/COMPONENT_QSPIF/mbed_lib.json
+index ca461079..24c86d6e 100644
+--- a/storage/blockdevice/COMPONENT_QSPIF/mbed_lib.json
++++ b/storage/blockdevice/COMPONENT_QSPIF/mbed_lib.json
+@@ -37,7 +37,8 @@
+         "MCU_NRF52840": {
+             "QSPI_FREQ": "32000000",
+             "QSPI_MIN_READ_SIZE": "4",
+-            "QSPI_MIN_PROG_SIZE": "4"
++            "QSPI_MIN_PROG_SIZE": "4",
++            "qspif.direct-reset": true
+         }, 
+         "MCU_PSOC6": {
+             "QSPI_FREQ": "50000000"
+diff --git a/targets/TARGET_NORDIC/TARGET_NRF5x/TARGET_NRF52/TARGET_MCU_NRF52840/TARGET_SEEED_XIAO_NRF52840_SENSE/PinNames.h b/targets/TARGET_NORDIC/TARGET_NRF5x/TARGET_NRF52/TARGET_MCU_NRF52840/TARGET_SEEED_XIAO_NRF52840_SENSE/PinNames.h
+index e2b1cbad..3fc2080d 100644
+--- a/targets/TARGET_NORDIC/TARGET_NRF5x/TARGET_NRF52/TARGET_MCU_NRF52840/TARGET_SEEED_XIAO_NRF52840_SENSE/PinNames.h
++++ b/targets/TARGET_NORDIC/TARGET_NRF5x/TARGET_NRF52/TARGET_MCU_NRF52840/TARGET_SEEED_XIAO_NRF52840_SENSE/PinNames.h
+@@ -179,6 +179,21 @@ typedef enum {
+     I2C_SDA0 = p4,
+     I2C_SCL0 = p5,
+ 
++    /**** QSPI pins ****/
++    QSPI1_IO0 = P0_20,
++    QSPI1_IO1 = P0_24,
++    QSPI1_IO2 = P0_22,
++    QSPI1_IO3 = P0_23,
++    QSPI1_SCK = P0_21,
++    QSPI1_CSN = P0_25,
++
++    QSPI_FLASH1_IO0 = P0_20,
++    QSPI_FLASH1_IO1 = P0_24,
++    QSPI_FLASH1_IO2 = P0_22,
++    QSPI_FLASH1_IO3 = P0_23,
++    QSPI_FLASH1_SCK = P0_21,
++    QSPI_FLASH1_CSN = P0_25,
++
+ #ifndef ARDUINO_ARCH_MBED
+     // Digital Pins
+     D0  = P0_2,
+diff --git a/targets/targets.json b/targets/targets.json
+index fff0bf72..725509ba 100644
+--- a/targets/targets.json
++++ b/targets/targets.json
+@@ -6447,11 +6447,7 @@
+         "features_add": [
+             "STORAGE"
+         ],
+-        "components_remove": [
+-            "QSPIF"
+-        ],
+         "device_has_remove": [
+-            "QSPI",
+             "ITM"
+         ],
+         "macros_add": [
+-- 
+2.20.1
+
