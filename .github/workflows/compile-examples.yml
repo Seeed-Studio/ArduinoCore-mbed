@@ -92,8 +92,9 @@ jobs:
 
       - name: Pack
         run: |
-          cd ${{ github.workspace }}/ArduinoCore-mbed/
-          tar -zcvf ArduinoCore-mbed.tar.gz
+          cd ${{ github.workspace }}
+          rm -rf .git/
+          tar --warning=no-file-changed --exclude=ArduinoCore-mbed.tar.gz -zcvf ArduinoCore-mbed.tar.gz ./
           echo "PACKAGE=${{ github.workspace }}/ArduinoCore-mbed.tar.gz" >> $GITHUB_ENV
 
       - name: Upload package
