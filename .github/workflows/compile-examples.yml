@@ -7,6 +7,7 @@ on:
       - ".github/workflows/compile-examples.yml"
       - "cores/**"
       - "libraries/**"
+      - "patches/**"
       - "variants/**"
       - "boards.txt"
       - "platform.txt"
@@ -15,6 +16,7 @@ on:
       - ".github/workflows/compile-examples.yml"
       - "cores/**"
       - "libraries/**"
+      - "patches/**"
       - "variants/**"
       - "boards.txt"
       - "platform.txt"
@@ -87,3 +89,15 @@ jobs:
         with:
           path: ${{ env.SKETCHES_REPORTS_PATH }}
           name: ${{ env.SKETCHES_REPORTS_PATH }}
+
+      - name: Pack
+        run: |
+          cd ${{ github.workspace }}/ArduinoCore-mbed/
+          tar -zcvf ArduinoCore-mbed.tar.gz
+          echo "PACKAGE=${{ github.workspace }}/ArduinoCore-mbed.tar.gz" >> $GITHUB_ENV
+
+      - name: Upload package
+        uses: actions/upload-artifact@master
+        with:
+          name: Seeed nRF52 boards
+          path: ${{env.PACKAGE}}
