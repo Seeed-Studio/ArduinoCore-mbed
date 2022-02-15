@@ -179,6 +179,21 @@ typedef enum {
     I2C_SDA0 = p4,
     I2C_SCL0 = p5,
 
+    /**** QSPI pins ****/
+    QSPI1_IO0 = P0_20,
+    QSPI1_IO1 = P0_24,
+    QSPI1_IO2 = P0_22,
+    QSPI1_IO3 = P0_23,
+    QSPI1_SCK = P0_21,
+    QSPI1_CSN = P0_25,
+
+    QSPI_FLASH1_IO0 = P0_20,
+    QSPI_FLASH1_IO1 = P0_24,
+    QSPI_FLASH1_IO2 = P0_22,
+    QSPI_FLASH1_IO3 = P0_23,
+    QSPI_FLASH1_SCK = P0_21,
+    QSPI_FLASH1_CSN = P0_25,
+
 #ifndef ARDUINO_ARCH_MBED
     // Digital Pins
     D0  = P0_2,
