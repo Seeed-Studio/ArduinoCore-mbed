@@ -225,6 +225,9 @@
 -iwithprefixbefore/mbed/storage/blockdevice/COMPONENT_FLASHIAP
 -iwithprefixbefore/mbed/storage/blockdevice/COMPONENT_FLASHIAP/include
 -iwithprefixbefore/mbed/storage/blockdevice/COMPONENT_FLASHIAP/include/FlashIAP
+-iwithprefixbefore/mbed/storage/blockdevice/COMPONENT_SPIF
+-iwithprefixbefore/mbed/storage/blockdevice/COMPONENT_SPIF/include
+-iwithprefixbefore/mbed/storage/blockdevice/COMPONENT_SPIF/include/SPIF
 -iwithprefixbefore/mbed/storage/blockdevice/COMPONENT_QSPIF
 -iwithprefixbefore/mbed/storage/blockdevice/COMPONENT_QSPIF/include
 -iwithprefixbefore/mbed/storage/blockdevice/COMPONENT_QSPIF/include/QSPIF
