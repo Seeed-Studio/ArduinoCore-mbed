@@ -168,8 +168,8 @@ generate_includes () {
 
 generate_flags () {
 	echo -n "Generating flags..."
-	for fl in c cxx ld; do
-		jq -r '.flags | .[] | select(. != "-MMD")' ./BUILD/"$BOARDNAME"/GCC_ARM${PROFILE}/.profile-${fl} \
+	for fl in c cxx ld; do	jq -r '.flags | .[] | select(. != "-MMD")' ./BUILD/"$BOARDNAME"/GCC_ARM${PROFILE}/.profile-${fl} \
+	
 		> "$ARDUINOVARIANT"/${fl}flags.txt
 		if [[ $ARDUINOVARIANT == *PORTENTA* ]]; then
 			echo "Patching '-fno-exceptions' flag for $ARDUINOVARIANT/${fl}flags.txt"
@@ -300,7 +300,7 @@ if [ $# -eq 0 ] ; then
 	echo " -p specify local mbed core directory (defaults to PWD)"
 	echo
 	echo "Example:"
-	echo " $(basename $0) -a SEEED_XIAO_NRF52840_SENSE:ARDUINO_NANO33BLE CHALLENGE_PMC_R2DX:ARDUINO_NANO33BLE"
+	echo " $(basename $0) -a ARDUINO_NANO33BLE:ARDUINO_NANO33BLE CHALLENGE_PMC_R2DX:ARDUINO_NANO33BLE"
 	exit 0
 fi
 
