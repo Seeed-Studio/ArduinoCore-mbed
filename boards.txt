@@ -40,6 +40,7 @@ xiaonRF52840.upload_port.2.pid=0x0145
 
 xiaonRF52840.bootloader.tool=bootburn
 xiaonRF52840.upload.tool=nrfutil
+xiaonRF52840.upload.tool.default=nrfutil
 xiaonRF52840.upload.protocol=nrfutil
 xiaonRF52840.upload.use_1200bps_touch=true
 xiaonRF52840.upload.wait_for_upload_port=true
@@ -95,6 +96,7 @@ xiaonRF52840Sense.upload_port.2.pid=0x0145
 
 xiaonRF52840Sense.bootloader.tool=bootburn
 xiaonRF52840Sense.upload.tool=nrfutil
+xiaonRF52840Sense.upload.tool.default=nrfutil
 xiaonRF52840Sense.upload.protocol=nrfutil
 xiaonRF52840Sense.upload.use_1200bps_touch=true
 xiaonRF52840Sense.upload.wait_for_upload_port=true
