@@ -95,12 +95,12 @@ jobs:
       - name: Pack
         run: |
           cd ${{ github.workspace }}
-          rm -rf .git/
-          tar --warning=no-file-changed --exclude=ArduinoCore-mbed.tar.gz -zcf ArduinoCore-mbed.tar.gz ./
+          touch ArduinoCore-mbed.tar.gz
+          tar --exclude=.git --exclude=ArduinoCore-mbed.tar.gz -zcvf ArduinoCore-mbed.tar.gz .
           echo "PACKAGE=${{ github.workspace }}/ArduinoCore-mbed.tar.gz" >> $GITHUB_ENV
 
       - name: Upload package
         uses: actions/upload-artifact@master
         with:
-          name: Seeed nRF52 boards
+          name: ArduinoCore-mbed.tar.gz
           path: ${{env.PACKAGE}}
