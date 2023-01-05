@@ -95,12 +95,18 @@ jobs:
       - name: Pack
         run: |
           cd ${{ github.workspace }}
-          touch ArduinoCore-mbed.tar.gz
-          tar --exclude=.git --exclude=ArduinoCore-mbed.tar.gz -zcvf ArduinoCore-mbed.tar.gz .
-          echo "PACKAGE=${{ github.workspace }}/ArduinoCore-mbed.tar.gz" >> $GITHUB_ENV
+          VERSION=`grep version= platform.txt | sed 's/version=//g'`
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+          PWD=`pwd`
+          FOLDERNAME=`basename $PWD`
+          cd ..
+          tar --transform "s|$FOLDERNAME|$FOLDERNAME-$VERSION|g"  --exclude=extras/** --exclude=.git* --exclude=.github/* -cjf ArduinoCore-mbed-$VERSION.tar.bz2 $FOLDERNAME
+          cd -
+          mv ../ArduinoCore-mbed-$VERSION.tar.bz2 .
+          echo "PACKAGE=${{ github.workspace }}/ArduinoCore-mbed-$VERSION.tar.bz2" >> $GITHUB_ENV
 
       - name: Upload package
         uses: actions/upload-artifact@master
         with:
-          name: ArduinoCore-mbed.tar.gz
+          name: ArduinoCore-mbed-${{env.VERSION}}.tar.bz2
           path: ${{env.PACKAGE}}
