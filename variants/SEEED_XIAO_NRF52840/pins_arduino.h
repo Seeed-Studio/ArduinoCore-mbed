@@ -66,7 +66,7 @@ extern PinName digitalPinToPinName(pin_size_t P);
 #define PIN_A3 (3u)
 #define PIN_A4 (4u)
 #define PIN_A5 (5u)
-#define PIN_VBAT (32u)
+#define PIN_VBAT (6u)
 //#define PIN_A6 (6u)
 //#define PIN_A7 (u)
 static const uint8_t A0  = PIN_A0;
