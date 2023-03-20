@@ -51,12 +51,12 @@ extern PinName digitalPinToPinName(pin_size_t P);
 
 // LEDs
 // ----
-#define PIN_LED     (11u)
+#define PIN_LED     (12u)
 #define LED_BUILTIN PIN_LED
-#define LEDR        (11u)
-#define LEDG        (12u)
-#define LEDB        (13u)
-#define LED_PWR     (11u)
+#define LEDR        (12u)
+#define LEDG        (13u)
+#define LEDB        (14u)
+#define LED_PWR     (12u)
 
 // Analog pins
 // -----------
@@ -66,7 +66,7 @@ extern PinName digitalPinToPinName(pin_size_t P);
 #define PIN_A3 (3u)
 #define PIN_A4 (4u)
 #define PIN_A5 (5u)
-#define PIN_VBAT (32u)
+#define PIN_VBAT (6u)
 //#define PIN_A6 (6u)
 //#define PIN_A7 (u)
 static const uint8_t A0  = PIN_A0;
@@ -87,34 +87,34 @@ static const uint8_t A5  = PIN_A5;
 #define D3  (3u)
 #define D4  (4u)
 #define D5  (5u)
-#define D6  (6u)
-#define D7  (7u)
-#define D8  (8u)
-#define D9  (9u)
-#define D10 (10u)
+#define D6  (7u)
+#define D7  (8u)
+#define D8  (9u)
+#define D9  (10u)
+#define D10 (11u)
 
-#define D29 (29u)
-#define D30 (30u)
+#define D29 (30u)
+#define D30 (31u)
 
 // Other pins
 // ----------
-#define PIN_VBAT_ENABLE (31u)
+#define PIN_VBAT_ENABLE (32u)
 
 /*
  * Serial interfaces
  */
 // Serial (EDBG)
-#define PIN_SERIAL_RX (7ul)
-#define PIN_SERIAL_TX (6ul)
+#define PIN_SERIAL_RX (8ul)
+#define PIN_SERIAL_TX (7ul)
 
 //Needed for SD library
 #define SDCARD_SPI    SPI
 #define SDCARD_SS_PIN   PIN_SPI_SS
  
 // SPI
-#define PIN_SPI_MISO  (9u)
-#define PIN_SPI_MOSI  (10u)
-#define PIN_SPI_SCK   (8u)
+#define PIN_SPI_MISO  (10u)
+#define PIN_SPI_MOSI  (11u)
+#define PIN_SPI_SCK   (9u)
 #define PIN_SPI_SS    (2u)
 
 static const uint8_t SS   = PIN_SPI_SS;   // SPI Slave SS not used. Set here only for reference.
@@ -126,11 +126,11 @@ static const uint8_t SCK  = PIN_SPI_SCK;
 #define PIN_WIRE_SDA        (4u)
 #define PIN_WIRE_SCL        (5u)
 
-#define PIN_WIRE_SDA1       (16u)
-#define PIN_WIRE_SCL1       (15u)
+#define PIN_WIRE_SDA1       (17u)
+#define PIN_WIRE_SCL1       (16u)
 
-#define PIN_LSM6DS3TR_C_POWER (14u)
-#define PIN_LSM6DS3TR_C_INT1  (17u)
+#define PIN_LSM6DS3TR_C_POWER (15u)
+#define PIN_LSM6DS3TR_C_INT1  (18u)
 
 //#define PIN_ENABLE_I2C_PULLUP      (32u)
 //#define PIN_ENABLE_SENSORS_3V3     (33u)
@@ -139,17 +139,17 @@ static const uint8_t SCK  = PIN_SPI_SCK;
 
 // PDM Interfaces
 // ---------------
-#define PIN_PDM_PWR	 (18u)
-#define PIN_PDM_CLK	 (19u)
-#define PIN_PDM_DIN	 (20u)
+#define PIN_PDM_PWR	 (19u)
+#define PIN_PDM_CLK	 (20u)
+#define PIN_PDM_DIN	 (21u)
 
 // QSPI Pins
-#define PIN_QSPI_SCK         (23u)
-#define PIN_QSPI_CS          (24u)
-#define PIN_QSPI_IO0         (25u)
-#define PIN_QSPI_IO1         (26u)
-#define PIN_QSPI_IO2         (27u)
-#define PIN_QSPI_IO3         (28u)
+#define PIN_QSPI_SCK         (24u)
+#define PIN_QSPI_CS          (25u)
+#define PIN_QSPI_IO0         (26u)
+#define PIN_QSPI_IO1         (27u)
+#define PIN_QSPI_IO2         (28u)
+#define PIN_QSPI_IO3         (29u)
 
 // On-board QSPI Flash
 #define EXTERNAL_FLASH_DEVICES   P25Q16H

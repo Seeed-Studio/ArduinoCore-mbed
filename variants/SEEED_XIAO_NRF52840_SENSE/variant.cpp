@@ -83,6 +83,9 @@ PinDescription g_APinDescription[] = {
   { P0_29, NULL, NULL, NULL },     // D3/A3
   { P0_4,  NULL, NULL, NULL },     // D4/A4/SDA
   { P0_5,  NULL, NULL, NULL },     // D5/A5/SCL
+
+  // VBAT_READ / Analog
+  { P0_31, NULL, NULL, NULL },     // D32/VBAT_READ
   
   // D6 - D10
   { P1_11, NULL, NULL, NULL },     // D6/TX
@@ -125,7 +128,6 @@ PinDescription g_APinDescription[] = {
   
   // VBAT
   { P0_14, NULL, NULL, NULL },     // D31/VBAT_ENABLE
-  { P0_31, NULL, NULL, NULL },     // D32/VBAT_READ
 };
 
 extern "C" {
