@@ -249,11 +249,12 @@ static void field_timer_with_callback_config(void)
     NRF_TIMER4->INTENSET  = TIMER_INTENSET_COMPARE0_Set << TIMER_INTENSET_COMPARE0_Pos;
 
     NVIC_ClearPendingIRQ(TIMER4_IRQn);
+    NVIC_SetVector(TIMER4_IRQn, TIMER4_IRQHandler);
     NVIC_SetPriority(TIMER4_IRQn, NFCT_CONFIG_IRQ_PRIORITY);
     NVIC_EnableIRQ(TIMER4_IRQn);
 }
 
-void TIMER4_IRQHandler_v(void)
+void TIMER4_IRQHandler(void)
 {
     HAL_NFC_DEBUG_PIN_SET(HAL_NFC_TIMER4_EVENT_DEBUG_PIN);
 #ifdef HAL_NFC_ENGINEERING_BC_FTPAN_WORKAROUND
@@ -547,7 +548,7 @@ static inline void nrf_nfct_field_event_handler(volatile nfct_field_sense_state_
             if (!m_field_on)
             {
                 HAL_NFC_DEBUG_PIN_SET(HAL_NFC_HCLOCK_ON_DEBUG_PIN);  //DEBUG!
-                nrf_drv_clock_hfclk_request(&m_clock_handler_item);
+                // nrf_drv_clock_hfclk_request(&m_clock_handler_item);
 
 #ifdef HAL_NFC_NRF52840_ENGINEERING_ABC_WORKAROUND
                 /* Begin: Bugfix for FTPAN-190 */
@@ -580,7 +581,7 @@ static inline void nrf_nfct_field_event_handler(volatile nfct_field_sense_state_
 #endif // HAL_NFC_NRF52840_ENGINEERING_ABC_WORKAROUND
 
             NRF_NFCT->TASKS_SENSE = 1;
-            nrf_drv_clock_hfclk_release();
+            // nrf_drv_clock_hfclk_release();
             m_field_on = false;
 
             NRF_NFCT->INTENCLR =
@@ -711,6 +712,7 @@ ret_code_t hal_nfc_start(void)
     NRF_NFCT->TASKS_SENSE = 1;
 
     NVIC_ClearPendingIRQ(NFCT_IRQn);
+    NVIC_SetVector(NFCT_IRQn, NFCT_IRQHandler);
     NVIC_SetPriority(NFCT_IRQn, NFCT_CONFIG_IRQ_PRIORITY);
     NVIC_EnableIRQ(NFCT_IRQn);
 
@@ -753,7 +755,7 @@ ret_code_t hal_nfc_done(void)
     return NRF_SUCCESS;
 }
 
-void NFCT_IRQHandler_v(void)
+void NFCT_IRQHandler(void)
 {
     nfct_field_sense_state_t current_field = NFC_FIELD_STATE_NONE;
 
@@ -950,7 +952,7 @@ static void hal_nfc_field_check(void)
 
             NRF_TIMER4->TASKS_SHUTDOWN = 1;
 
-            nrf_drv_clock_hfclk_release();
+            // nrf_drv_clock_hfclk_release();
 
             nrf_nfct_field_lost_hfclk_handle();
 
@@ -982,7 +984,7 @@ static inline void nrf_nfct_field_event_handler(volatile nfct_field_sense_state_
     if (!m_field_on)
     {
         HAL_NFC_DEBUG_PIN_SET(HAL_NFC_HCLOCK_ON_DEBUG_PIN);  //DEBUG!
-        nrf_drv_clock_hfclk_request(&m_clock_handler_item);
+        // nrf_drv_clock_hfclk_request(&m_clock_handler_item);
 
         NRF_TIMER4->TASKS_CLEAR = 1;
         NRF_TIMER4->TASKS_START = 1;
