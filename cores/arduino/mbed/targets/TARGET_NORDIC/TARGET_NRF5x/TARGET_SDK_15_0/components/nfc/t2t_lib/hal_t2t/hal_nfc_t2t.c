@@ -235,6 +235,7 @@ static void hal_nfc_activate_check(void)
 
 #if defined(HAL_NFC_ENGINEERING_BC_FTPAN_WORKAROUND) || defined(HAL_NFC_NRF52840_ENGINEERING_ABC_WORKAROUND)
 
+void TIMER4_IRQHandler(void);
 static void field_timer_with_callback_config(void)
 {
     NRF_TIMER4->MODE      = TIMER_MODE_MODE_Timer << TIMER_MODE_MODE_Pos;
@@ -705,7 +706,7 @@ ret_code_t hal_nfc_parameter_get(hal_nfc_param_id_t id, void * p_data, size_t * 
     return NRF_SUCCESS;
 }
 
-
+void NFCT_IRQHandler(void);
 ret_code_t hal_nfc_start(void)
 {
     NRF_NFCT->ERRORSTATUS = NRF_NFCT_ERRORSTATUS_ALL;
