@@ -50,7 +50,7 @@
   
 */
 
-#include <NFC.h>
+#include <NFCT.h>
 
 void setup() {
   NFC.setURImessage("arduino.org", NFC_URI_HTTP_WWW);

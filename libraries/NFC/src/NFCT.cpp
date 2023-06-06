@@ -47,8 +47,8 @@ uint8_t ndef_msg_buf[256];
 void NFCClass::setTXTmessage(const char TXTMessage[], const char language[]){
 	uint32_t err_code;
 	err_code = nfc_t2t_setup(nfc_callback, NULL);
-	Serial1.print("nfc_t2t_setup: ");
-	Serial1.println(err_code);
+	// Serial1.print("nfc_t2t_setup: ");
+	// Serial1.println(err_code);
 	uint32_t len = sizeof(ndef_msg_buf);
 	uint8_t sizeM=strlen(TXTMessage);
 	uint8_t sizeL=strlen(language);	
@@ -62,18 +62,18 @@ void NFCClass::setTXTmessage(const char TXTMessage[], const char language[]){
                                   sizeM);
 	err_code = nfc_ndef_msg_record_add( &NFC_NDEF_MSG(welcome_msg),
                                         &NFC_NDEF_TEXT_RECORD_DESC(en_text_rec));
-	Serial1.print("nfc_ndef_msg_record_add: ");
-	Serial1.println(err_code);
+	// Serial1.print("nfc_ndef_msg_record_add: ");
+	// Serial1.println(err_code);
 		
 	err_code = nfc_ndef_msg_encode(&NFC_NDEF_MSG(welcome_msg),
                                             ndef_msg_buf,
                                             &len);
-	Serial1.print("nfc_ndef_msg_encode: ");
-	Serial1.println(err_code);
+	// Serial1.print("nfc_ndef_msg_encode: ");
+	// Serial1.println(err_code);
 	
 	err_code = nfc_t2t_payload_set((uint8_t *) ndef_msg_buf, len);
-	Serial1.print("nfc_t2t_payload_set: ");
-	Serial1.println(err_code);
+	// Serial1.print("nfc_t2t_payload_set: ");
+	// Serial1.println(err_code);
 }
 
 void NFCClass::setURImessage( const char URL[], nfc_uri_id_t type){
@@ -83,18 +83,18 @@ void NFCClass::setURImessage( const char URL[], nfc_uri_id_t type){
 	
 	uint32_t len = sizeof(ndef_msg_buf);
 	err_code = nfc_t2t_setup(nfc_callback, NULL);
-	Serial1.print("nfc_t2t_setup: ");
-	Serial1.println(err_code);
+	// Serial1.print("nfc_t2t_setup: ");
+	// Serial1.println(err_code);
 	err_code = nfc_uri_msg_encode( type,
                          (uint8_t *) URL,
                          size,
                          ndef_msg_buf,
                          &len);
-	Serial1.print("nfc_uri_msg_encode: ");
-	Serial1.println(err_code);
+	// Serial1.print("nfc_uri_msg_encode: ");
+	// Serial1.println(err_code);
 	err_code = nfc_t2t_payload_set((uint8_t*)ndef_msg_buf, len);
-	Serial1.print("nfc_t2t_payload_set: ");
-	Serial1.println(err_code);
+	// Serial1.print("nfc_t2t_payload_set: ");
+	// Serial1.println(err_code);
 }
 
 void NFCClass::setAPPmessage(const char android_app[], const char windows_app[]){
@@ -117,8 +117,8 @@ void NFCClass::setAPPmessage(const char android_app[], const char windows_app[])
 void NFCClass::start(){
 	uint32_t err_code;
 	err_code = nfc_t2t_emulation_start();	
-	Serial1.print("nfc_t2t_emulation_start: ");
-	Serial1.println(err_code);
+	// Serial1.print("nfc_t2t_emulation_start: ");
+	// Serial1.println(err_code);
 }
 
 void NFCClass::stop(){

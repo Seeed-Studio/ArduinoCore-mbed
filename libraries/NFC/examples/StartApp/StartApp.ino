@@ -17,7 +17,7 @@
   
 */
 
-#include <NFC.h>
+#include <NFCT.h>
 
 //specify the package name for windows and android phone and insert the EOL character at the end '\0'
 static const char android_package_name[] = {'n', 'o', '.', 'n', 'o', 'r', 'd', 'i', 'c', 's',
