@@ -143,7 +143,7 @@ NRF_LOG_MODULE_REGISTER();
 #define NRF_NFCT_DEFAULTSTATESLEEP_MSK 0x1UL                                    /**< Mask for checking the default state of NFCT. */
 
 #ifdef HAL_NFC_NRF52840_ENGINEERING_ABC_WORKAROUND
-    #define NRF_NFCT_ACTIVATE_CONDS_THR    2                                        /**< Number of required conditions to activate NFCT. */
+    #define NRF_NFCT_ACTIVATE_CONDS_THR    1                                        /**< Number of required conditions to activate NFCT. */
     #define NRF_NFCT_ACTIVATE_DELAY        1000                                     /**< Minimal delay in us between NFC field detection and activation of NFCT. */
 #endif // HAL_NFC_NRF52840_ENGINEERING_ABC_WORKAROUND
 
