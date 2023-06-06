@@ -253,7 +253,7 @@ static void field_timer_with_callback_config(void)
     NVIC_EnableIRQ(TIMER4_IRQn);
 }
 
-void TIMER4_IRQHandler(void)
+void TIMER4_IRQHandler_v(void)
 {
     HAL_NFC_DEBUG_PIN_SET(HAL_NFC_TIMER4_EVENT_DEBUG_PIN);
 #ifdef HAL_NFC_ENGINEERING_BC_FTPAN_WORKAROUND
@@ -753,7 +753,7 @@ ret_code_t hal_nfc_done(void)
     return NRF_SUCCESS;
 }
 
-void NFCT_IRQHandler(void)
+void NFCT_IRQHandler_v(void)
 {
     nfct_field_sense_state_t current_field = NFC_FIELD_STATE_NONE;
 
