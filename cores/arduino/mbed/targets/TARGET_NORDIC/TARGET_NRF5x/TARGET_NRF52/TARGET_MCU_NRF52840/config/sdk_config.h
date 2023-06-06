@@ -1203,7 +1203,7 @@
 // <e> CLOCK_ENABLED - nrf_drv_clock - CLOCK peripheral driver - legacy layer
 //==========================================================
 #ifndef CLOCK_ENABLED
-#define CLOCK_ENABLED 0
+#define CLOCK_ENABLED 1
 #endif
 // <o> CLOCK_CONFIG_LF_SRC  - LF Clock Source
  
@@ -1640,7 +1640,7 @@
 // <e> NRFX_CLOCK_ENABLED - nrfx_clock - CLOCK peripheral driver
 //==========================================================
 #ifndef NRFX_CLOCK_ENABLED
-#define NRFX_CLOCK_ENABLED 0
+#define NRFX_CLOCK_ENABLED 1
 #endif
 // <o> NRFX_CLOCK_CONFIG_LF_SRC  - LF Clock Source
  
@@ -3659,7 +3659,7 @@
 // <e> NRFX_TIMER_ENABLED - nrfx_timer - TIMER periperal driver
 //==========================================================
 #ifndef NRFX_TIMER_ENABLED
-#define NRFX_TIMER_ENABLED 0
+#define NRFX_TIMER_ENABLED 1
 #endif
 // <q> NRFX_TIMER0_ENABLED  - Enable TIMER0 instance
  
@@ -3693,7 +3693,7 @@
  
 
 #ifndef NRFX_TIMER4_ENABLED
-#define NRFX_TIMER4_ENABLED 0
+#define NRFX_TIMER4_ENABLED 1
 #endif
 
 // <o> NRFX_TIMER_DEFAULT_CONFIG_FREQUENCY  - Timer frequency if in Timer mode
@@ -5316,7 +5316,7 @@
 // <e> TIMER_ENABLED - nrf_drv_timer - TIMER periperal driver - legacy layer
 //==========================================================
 #ifndef TIMER_ENABLED
-#define TIMER_ENABLED 0
+#define TIMER_ENABLED 1
 #endif
 // <o> TIMER_DEFAULT_CONFIG_FREQUENCY  - Timer frequency if in Timer mode
  
@@ -5404,7 +5404,7 @@
  
 
 #ifndef TIMER4_ENABLED
-#define TIMER4_ENABLED 0
+#define TIMER4_ENABLED 1
 #endif
 
 // </e>
@@ -9803,20 +9803,20 @@
  
 
 #ifndef NFC_NDEF_LAUNCHAPP_MSG_ENABLED
-#define NFC_NDEF_LAUNCHAPP_MSG_ENABLED 0
+#define NFC_NDEF_LAUNCHAPP_MSG_ENABLED 1
 #endif
 
 // <q> NFC_NDEF_LAUNCHAPP_REC_ENABLED  - nfc_launchapp_rec - Encoding data for NDEF Application Launching record for NFC Tag
  
 
 #ifndef NFC_NDEF_LAUNCHAPP_REC_ENABLED
-#define NFC_NDEF_LAUNCHAPP_REC_ENABLED 0
+#define NFC_NDEF_LAUNCHAPP_REC_ENABLED 1
 #endif
 
 // <e> NFC_NDEF_MSG_ENABLED - nfc_ndef_msg - NFC NDEF Message generator module
 //==========================================================
 #ifndef NFC_NDEF_MSG_ENABLED
-#define NFC_NDEF_MSG_ENABLED 0
+#define NFC_NDEF_MSG_ENABLED 1
 #endif
 // <o> NFC_NDEF_MSG_TAG_TYPE  - NFC Tag Type
  
@@ -9832,7 +9832,7 @@
 // <e> NFC_NDEF_MSG_PARSER_ENABLED - nfc_ndef_msg_parser - NFC NDEF message parser module
 //==========================================================
 #ifndef NFC_NDEF_MSG_PARSER_ENABLED
-#define NFC_NDEF_MSG_PARSER_ENABLED 0
+#define NFC_NDEF_MSG_PARSER_ENABLED 1
 #endif
 // <e> NFC_NDEF_MSG_PARSER_LOG_ENABLED - Enables logging in the module.
 //==========================================================
@@ -9875,13 +9875,13 @@
  
 
 #ifndef NFC_NDEF_RECORD_ENABLED
-#define NFC_NDEF_RECORD_ENABLED 0
+#define NFC_NDEF_RECORD_ENABLED 1
 #endif
 
 // <e> NFC_NDEF_RECORD_PARSER_ENABLED - nfc_ndef_record_parser - NFC NDEF Record parser module
 //==========================================================
 #ifndef NFC_NDEF_RECORD_PARSER_ENABLED
-#define NFC_NDEF_RECORD_PARSER_ENABLED 0
+#define NFC_NDEF_RECORD_PARSER_ENABLED 1
 #endif
 // <e> NFC_NDEF_RECORD_PARSER_LOG_ENABLED - Enables logging in the module.
 //==========================================================
@@ -9924,27 +9924,27 @@
  
 
 #ifndef NFC_NDEF_TEXT_RECORD_ENABLED
-#define NFC_NDEF_TEXT_RECORD_ENABLED 0
+#define NFC_NDEF_TEXT_RECORD_ENABLED 1
 #endif
 
 // <q> NFC_NDEF_URI_MSG_ENABLED  - nfc_uri_msg - Encoding data for NDEF message with URI record for NFC Tag
  
 
 #ifndef NFC_NDEF_URI_MSG_ENABLED
-#define NFC_NDEF_URI_MSG_ENABLED 0
+#define NFC_NDEF_URI_MSG_ENABLED 1
 #endif
 
 // <q> NFC_NDEF_URI_REC_ENABLED  - nfc_uri_rec - Encoding data for a URI record for NFC Tag
  
 
 #ifndef NFC_NDEF_URI_REC_ENABLED
-#define NFC_NDEF_URI_REC_ENABLED 0
+#define NFC_NDEF_URI_REC_ENABLED 1
 #endif
 
 // <e> NFC_T2T_HAL_ENABLED - nfc_t2t_hal - Hardware Abstraction Layer for NFC library.
 //==========================================================
 #ifndef NFC_T2T_HAL_ENABLED
-#define NFC_T2T_HAL_ENABLED 0
+#define NFC_T2T_HAL_ENABLED 1
 #endif
 // <o> NFCT_CONFIG_IRQ_PRIORITY  - Interrupt priority
  
@@ -10630,7 +10630,7 @@
 // <e> NFC_T2T_PARSER_ENABLED - nfc_type_2_tag_parser - Parser for decoding Type 2 Tag data
 //==========================================================
 #ifndef NFC_T2T_PARSER_ENABLED
-#define NFC_T2T_PARSER_ENABLED 0
+#define NFC_T2T_PARSER_ENABLED 1
 #endif
 // <e> NFC_T2T_PARSER_LOG_ENABLED - Enables logging in the module.
 //==========================================================
