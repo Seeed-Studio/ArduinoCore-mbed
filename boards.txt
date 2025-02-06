@@ -1,6 +1,6 @@
 ##############################################################
 
-xiaonRF52840.name=Seeed XIAO BLE - nRF52840
+xiaonRF52840.name=Seeed XIAO BLE - nRF52840(EOL)
 xiaonRF52840.build.core=arduino
 xiaonRF52840.build.crossprefix=arm-none-eabi-
 xiaonRF52840.build.compiler_path={runtime.tools.arm-none-eabi-gcc-7-2017q4.path}/bin/
@@ -56,7 +56,7 @@ xiaonRF52840.bootloader.file=Seeed_XIAO_nRF52840_Sense/Seeed_XIAO_nRF52840_Sense
 
 ##############################################################
 
-xiaonRF52840Sense.name=Seeed XIAO BLE Sense - nRF52840
+xiaonRF52840Sense.name=Seeed XIAO BLE Sense - nRF52840(EOL)
 xiaonRF52840Sense.build.core=arduino
 xiaonRF52840Sense.build.crossprefix=arm-none-eabi-
 xiaonRF52840Sense.build.compiler_path={runtime.tools.arm-none-eabi-gcc-7-2017q4.path}/bin/
@@ -109,3 +109,114 @@ xiaonRF52840Sense.bootloader.extra_action.preflash=echo INFO:removed_mass-erase
 xiaonRF52840Sense.bootloader.config=-f target/nrf52.cfg
 xiaonRF52840Sense.bootloader.programmer=-f interface/cmsis-dap.cfg
 xiaonRF52840Sense.bootloader.file=Seeed_XIAO_nRF52840_Sense/Seeed_XIAO_nRF52840_Sense_bootloader-0.6.1_s140_7.3.0.hex
+##############################################################
+
+xiaonRF52840Plus.name=Seeed XIAO BLE Plus - nRF52840(EOL)
+xiaonRF52840Plus.build.core=arduino
+xiaonRF52840Plus.build.crossprefix=arm-none-eabi-
+xiaonRF52840Plus.build.compiler_path={runtime.tools.arm-none-eabi-gcc-7-2017q4.path}/bin/
+
+xiaonRF52840Plus.build.variant=SEEED_XIAO_NRF52840_PLUS
+xiaonRF52840Plus.build.mcu=cortex-m4
+xiaonRF52840Plus.build.extra_flags=
+xiaonRF52840Plus.build.architecture=cortex-m4
+xiaonRF52840Plus.build.fpu=-mfpu=fpv4-sp-d16
+xiaonRF52840Plus.build.float-abi=-mfloat-abi=softfp
+xiaonRF52840Plus.build.board=SEEED_XIAO_NRF52840_PLUS
+xiaonRF52840Plus.build.ldscript=linker_script.ld
+xiaonRF52840Plus.build.sd_name=s140
+xiaonRF52840Plus.build.sd_version=7.3.0
+xiaonRF52840Plus.build.sd_fwid=0x0123
+
+xiaonRF52840Plus.compiler.mbed.arch.define=-DARDUINO_ARCH_NRF52840
+xiaonRF52840Plus.compiler.mbed.defines={build.variant.path}/defines.txt
+xiaonRF52840Plus.compiler.mbed.ldflags={build.variant.path}/ldflags.txt
+xiaonRF52840Plus.compiler.mbed.cflags={build.variant.path}/cflags.txt
+xiaonRF52840Plus.compiler.mbed.cxxflags={build.variant.path}/cxxflags.txt
+xiaonRF52840Plus.compiler.mbed.includes={build.variant.path}/includes.txt
+xiaonRF52840Plus.compiler.mbed.extra_ldflags=-lstdc++ -lsupc++ -lm -lc -lgcc -lnosys
+xiaonRF52840Plus.compiler.mbed="{build.variant.path}/libs/libmbed.a" "{build.variant.path}/libs/libcc_310_core.a" "{build.variant.path}/libs/libcc_310_ext.a" "{build.variant.path}/libs/libcc_310_trng.a"
+xiaonRF52840Plus.vid.0=0x2886
+xiaonRF52840Plus.pid.0=0x0064
+xiaonRF52840Plus.vid.1=0x2886
+xiaonRF52840Plus.pid.1=0x8064
+xiaonRF52840Plus.vid.2=0x2886
+xiaonRF52840Plus.pid.2=0x0164
+xiaonRF52840Plus.upload_port.0.vid=0x2886
+xiaonRF52840Plus.upload_port.0.pid=0x0064
+xiaonRF52840Plus.upload_port.1.vid=0x2886
+xiaonRF52840Plus.upload_port.1.pid=0x8064
+xiaonRF52840Plus.upload_port.2.vid=0x2886
+xiaonRF52840Plus.upload_port.2.pid=0x0164
+
+xiaonRF52840Plus.bootloader.tool=bootburn
+xiaonRF52840Plus.upload.tool=nrfutil
+xiaonRF52840Plus.upload.tool.default=nrfutil
+xiaonRF52840Plus.upload.protocol=nrfutil
+xiaonRF52840Plus.upload.use_1200bps_touch=true
+xiaonRF52840Plus.upload.wait_for_upload_port=true
+xiaonRF52840Plus.upload.maximum_size=811008
+xiaonRF52840Plus.upload.maximum_data_size=237568
+
+xiaonRF52840Plus.bootloader.tool=openocd
+xiaonRF52840Plus.bootloader.tool.default=openocd
+xiaonRF52840Plus.bootloader.extra_action.preflash=echo INFO:removed_mass-erase
+xiaonRF52840Plus.bootloader.config=-f target/nrf52.cfg
+xiaonRF52840Plus.bootloader.programmer=-f interface/cmsis-dap.cfg
+xiaonRF52840Plus.bootloader.file=Seeed_XIAO_nRF52840_Sense/Seeed_XIAO_nRF52840_Sense_bootloader-0.6.1_s140_7.3.0.hex
+
+##############################################################
+
+xiaonRF52840SensePlus.name=Seeed XIAO BLE Sense Plus - nRF52840(EOL)
+xiaonRF52840SensePlus.build.core=arduino
+xiaonRF52840SensePlus.build.crossprefix=arm-none-eabi-
+xiaonRF52840SensePlus.build.compiler_path={runtime.tools.arm-none-eabi-gcc-7-2017q4.path}/bin/
+
+xiaonRF52840SensePlus.build.variant=SEEED_XIAO_NRF52840_SENSE_PLUS
+xiaonRF52840SensePlus.build.mcu=cortex-m4
+xiaonRF52840SensePlus.build.extra_flags=
+xiaonRF52840SensePlus.build.architecture=cortex-m4
+xiaonRF52840SensePlus.build.fpu=-mfpu=fpv4-sp-d16
+xiaonRF52840SensePlus.build.float-abi=-mfloat-abi=softfp
+xiaonRF52840SensePlus.build.board=SEEED_XIAO_NRF52840_SENSE_PLUS
+xiaonRF52840SensePlus.build.ldscript=linker_script.ld
+xiaonRF52840SensePlus.build.sd_name=s140
+xiaonRF52840SensePlus.build.sd_version=7.3.0
+xiaonRF52840SensePlus.build.sd_fwid=0x0123
+
+xiaonRF52840SensePlus.compiler.mbed.arch.define=-DARDUINO_ARCH_NRF52840
+xiaonRF52840SensePlus.compiler.mbed.defines={build.variant.path}/defines.txt
+xiaonRF52840SensePlus.compiler.mbed.ldflags={build.variant.path}/ldflags.txt
+xiaonRF52840SensePlus.compiler.mbed.cflags={build.variant.path}/cflags.txt
+xiaonRF52840SensePlus.compiler.mbed.cxxflags={build.variant.path}/cxxflags.txt
+xiaonRF52840SensePlus.compiler.mbed.includes={build.variant.path}/includes.txt
+xiaonRF52840SensePlus.compiler.mbed.extra_ldflags=-lstdc++ -lsupc++ -lm -lc -lgcc -lnosys
+xiaonRF52840SensePlus.compiler.mbed="{build.variant.path}/libs/libmbed.a" "{build.variant.path}/libs/libcc_310_core.a" "{build.variant.path}/libs/libcc_310_ext.a" "{build.variant.path}/libs/libcc_310_trng.a"
+xiaonRF52840SensePlus.vid.0=0x2886
+xiaonRF52840SensePlus.pid.0=0x0065
+xiaonRF52840SensePlus.vid.1=0x2886
+xiaonRF52840SensePlus.pid.1=0x8065
+xiaonRF52840SensePlus.vid.2=0x2886
+xiaonRF52840SensePlus.pid.2=0x0165
+xiaonRF52840SensePlus.upload_port.0.vid=0x2886
+xiaonRF52840SensePlus.upload_port.0.pid=0x0065
+xiaonRF52840SensePlus.upload_port.1.vid=0x2886
+xiaonRF52840SensePlus.upload_port.1.pid=0x8065
+xiaonRF52840SensePlus.upload_port.2.vid=0x2886
+xiaonRF52840SensePlus.upload_port.2.pid=0x0165
+
+xiaonRF52840SensePlus.bootloader.tool=bootburn
+xiaonRF52840SensePlus.upload.tool=nrfutil
+xiaonRF52840SensePlus.upload.tool.default=nrfutil
+xiaonRF52840SensePlus.upload.protocol=nrfutil
+xiaonRF52840SensePlus.upload.use_1200bps_touch=true
+xiaonRF52840SensePlus.upload.wait_for_upload_port=true
+xiaonRF52840SensePlus.upload.maximum_size=811008
+xiaonRF52840SensePlus.upload.maximum_data_size=237568
+
+xiaonRF52840SensePlus.bootloader.tool=openocd
+xiaonRF52840SensePlus.bootloader.tool.default=openocd
+xiaonRF52840SensePlus.bootloader.extra_action.preflash=echo INFO:removed_mass-erase
+xiaonRF52840SensePlus.bootloader.config=-f target/nrf52.cfg
+xiaonRF52840SensePlus.bootloader.programmer=-f interface/cmsis-dap.cfg
+xiaonRF52840SensePlus.bootloader.file=Seeed_XIAO_nRF52840_Sense/Seeed_XIAO_nRF52840_Sense_bootloader-0.6.1_s140_7.3.0.hex
