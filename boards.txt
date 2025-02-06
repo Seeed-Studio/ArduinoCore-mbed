@@ -1,6 +1,6 @@
 ##############################################################
 
-xiaonRF52840.name=Seeed XIAO BLE - nRF52840(EOL)
+xiaonRF52840.name=XIAO nRF52840 (No Updates)
 xiaonRF52840.build.core=arduino
 xiaonRF52840.build.crossprefix=arm-none-eabi-
 xiaonRF52840.build.compiler_path={runtime.tools.arm-none-eabi-gcc-7-2017q4.path}/bin/
@@ -56,7 +56,7 @@ xiaonRF52840.bootloader.file=Seeed_XIAO_nRF52840_Sense/Seeed_XIAO_nRF52840_Sense
 
 ##############################################################
 
-xiaonRF52840Sense.name=Seeed XIAO BLE Sense - nRF52840(EOL)
+xiaonRF52840Sense.name=XIAO nRF52840 Sense (No Updates)
 xiaonRF52840Sense.build.core=arduino
 xiaonRF52840Sense.build.crossprefix=arm-none-eabi-
 xiaonRF52840Sense.build.compiler_path={runtime.tools.arm-none-eabi-gcc-7-2017q4.path}/bin/
@@ -109,9 +109,10 @@ xiaonRF52840Sense.bootloader.extra_action.preflash=echo INFO:removed_mass-erase
 xiaonRF52840Sense.bootloader.config=-f target/nrf52.cfg
 xiaonRF52840Sense.bootloader.programmer=-f interface/cmsis-dap.cfg
 xiaonRF52840Sense.bootloader.file=Seeed_XIAO_nRF52840_Sense/Seeed_XIAO_nRF52840_Sense_bootloader-0.6.1_s140_7.3.0.hex
+
 ##############################################################
 
-xiaonRF52840Plus.name=Seeed XIAO BLE Plus - nRF52840(EOL)
+xiaonRF52840Plus.name=XIAO nRF52840 Plus (No Updates)
 xiaonRF52840Plus.build.core=arduino
 xiaonRF52840Plus.build.crossprefix=arm-none-eabi-
 xiaonRF52840Plus.build.compiler_path={runtime.tools.arm-none-eabi-gcc-7-2017q4.path}/bin/
@@ -167,7 +168,7 @@ xiaonRF52840Plus.bootloader.file=Seeed_XIAO_nRF52840_Sense/Seeed_XIAO_nRF52840_S
 
 ##############################################################
 
-xiaonRF52840SensePlus.name=Seeed XIAO BLE Sense Plus - nRF52840(EOL)
+xiaonRF52840SensePlus.name=XIAO nRF52840 Sense Plus (No Updates)
 xiaonRF52840SensePlus.build.core=arduino
 xiaonRF52840SensePlus.build.crossprefix=arm-none-eabi-
 xiaonRF52840SensePlus.build.compiler_path={runtime.tools.arm-none-eabi-gcc-7-2017q4.path}/bin/
