@@ -46,13 +46,14 @@ xiaonRF52840.upload.use_1200bps_touch=true
 xiaonRF52840.upload.wait_for_upload_port=true
 xiaonRF52840.upload.maximum_size=811008
 xiaonRF52840.upload.maximum_data_size=237568
+xiaonRF52840.upload.transport=
 
 xiaonRF52840.bootloader.tool=openocd
 xiaonRF52840.bootloader.tool.default=openocd
 xiaonRF52840.bootloader.extra_action.preflash=echo INFO:removed_mass-erase
 xiaonRF52840.bootloader.config=-f target/nrf52.cfg
 xiaonRF52840.bootloader.programmer=-f interface/cmsis-dap.cfg
-xiaonRF52840.bootloader.file=Seeed_XIAO_nRF52840_Sense/Seeed_XIAO_nRF52840_Sense_bootloader-0.6.1_s140_7.3.0.hex
+xiaonRF52840.bootloader.file=Seeed_XIAO_nRF52840_Sense/Seeed_XIAO_nRF52840_bootloader-0.6.1_s140_7.3.0.hex
 
 ##############################################################
 
@@ -102,6 +103,7 @@ xiaonRF52840Sense.upload.use_1200bps_touch=true
 xiaonRF52840Sense.upload.wait_for_upload_port=true
 xiaonRF52840Sense.upload.maximum_size=811008
 xiaonRF52840Sense.upload.maximum_data_size=237568
+xiaonRF52840.upload.transport=
 
 xiaonRF52840Sense.bootloader.tool=openocd
 xiaonRF52840Sense.bootloader.tool.default=openocd
@@ -158,13 +160,14 @@ xiaonRF52840Plus.upload.use_1200bps_touch=true
 xiaonRF52840Plus.upload.wait_for_upload_port=true
 xiaonRF52840Plus.upload.maximum_size=811008
 xiaonRF52840Plus.upload.maximum_data_size=237568
+xiaonRF52840Plus.upload.transport=
 
 xiaonRF52840Plus.bootloader.tool=openocd
 xiaonRF52840Plus.bootloader.tool.default=openocd
 xiaonRF52840Plus.bootloader.extra_action.preflash=echo INFO:removed_mass-erase
 xiaonRF52840Plus.bootloader.config=-f target/nrf52.cfg
 xiaonRF52840Plus.bootloader.programmer=-f interface/cmsis-dap.cfg
-xiaonRF52840Plus.bootloader.file=Seeed_XIAO_nRF52840_Sense/Seeed_XIAO_nRF52840_Sense_bootloader-0.6.1_s140_7.3.0.hex
+xiaonRF52840Plus.bootloader.file=Seeed_XIAO_nRF52840_Sense/Seeed_XIAO_nRF52840_Plus_bootloader-0.6.1_s140_7.3.0.hex
 
 ##############################################################
 
@@ -214,10 +217,11 @@ xiaonRF52840SensePlus.upload.use_1200bps_touch=true
 xiaonRF52840SensePlus.upload.wait_for_upload_port=true
 xiaonRF52840SensePlus.upload.maximum_size=811008
 xiaonRF52840SensePlus.upload.maximum_data_size=237568
+xiaonRF52840SensePlus.upload.transport=
 
 xiaonRF52840SensePlus.bootloader.tool=openocd
 xiaonRF52840SensePlus.bootloader.tool.default=openocd
 xiaonRF52840SensePlus.bootloader.extra_action.preflash=echo INFO:removed_mass-erase
 xiaonRF52840SensePlus.bootloader.config=-f target/nrf52.cfg
 xiaonRF52840SensePlus.bootloader.programmer=-f interface/cmsis-dap.cfg
-xiaonRF52840SensePlus.bootloader.file=Seeed_XIAO_nRF52840_Sense/Seeed_XIAO_nRF52840_Sense_bootloader-0.6.1_s140_7.3.0.hex
+xiaonRF52840SensePlus.bootloader.file=Seeed_XIAO_nRF52840_Sense/Seeed_XIAO_nRF52840_Sense_Plus_bootloader-0.6.1_s140_7.3.0.hex
